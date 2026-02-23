@@ -269,43 +269,15 @@
                 <div class="tutorial-list">
                     <div class="tutorial-card" data-tutorial="podstawowe">
                         <h3>Podstawowe uderzenia</h3>
-                        <div class="tutorial-details hidden">
-                            <p>Poznaj dwie podstawowe techniki: bas i ton.</p>
-                            <p><strong>Bas (B):</strong> Uderz środkiem dłoni w centrum płyty czołowej. Dłoń powinna być całkowicie rozluźniona. To najgłębszy dźwięk cajona - taki jak stopa w perkusji.</p>
-                            <p><strong>Ton (T):</strong> Uderz opuszkami palców przy górnej krawędzi płyty. Palce lekko napięte, szybkie uderzenie. To wysoki, ostry dźwięk - jak werbel.</p>
-                            <p><strong>Wskazówka:</strong> Ćwicz naprzemiennie B-T-B-T aż poczujesz różnicę w brzmieniu.</p>
-                        </div>
                     </div>
                     <div class="tutorial-card" data-tutorial="pozycja">
                         <h3>Pozycja rąk</h3>
-                        <div class="tutorial-details hidden">
-                            <p>Prawidłowe ułożenie dłoni jest kluczowe dla dobrego brzmienia.</p>
-                            <p><strong>Ręce:</strong> Powinny być rozluźnione i naturalnie zaokrąglone. Nie zaciskaj pięści ani nie rozciągaj płasko.</p>
-                            <p><strong>Nadgarstki:</strong> Elastyczne, pozwalają na naturalny ruch. Nie blokuj ich!</p>
-                            <p><strong>Ćwiczenie:</strong> Potrząśnij rękami jak gdyby się ich pozbywał wody - to idealna rozluźniona pozycja.</p>
-                        </div>
                     </div>
                     <div class="tutorial-card" data-tutorial="siedzenie">
                         <h3>Jak siedzieć</h3>
-                        <div class="tutorial-details hidden">
-                            <p>Ergonomiczna pozycja zapobiega bólom i pozwala grać dłużej.</p>
-                            <p><strong>Cajon:</strong> Siadaj centralnie, cajon lekko pochylony do tyłu (około 10-15°).</p>
-                            <p><strong>Stopy:</strong> Płasko na podłodze, kolana w kącie 90°.</p>
-                            <p><strong>Plecy:</strong> Proste ale nie sztywne. Nie pochylaj się nadmiernie nad cajonem.</p>
-                            <p><strong>Wysokość:</strong> Ręce powinny swobodnie sięgać górnej części płyty bez nadmiernego wyciągania.</p>
-                        </div>
                     </div>
                     <div class="tutorial-card" data-tutorial="nuty">
                         <h3>Czytanie nut</h3>
-                        <div class="tutorial-details hidden">
-                            <p>Nasz system notacji jest prosty i intuicyjny.</p>
-                            <p><strong>B</strong> = Bas (głęboki dźwięk, środek dłoni, centrum płyty)</p>
-                            <p><strong>T</strong> = Ton (wysoki dźwięk, palce, góra płyty)</p>
-                            <p><strong>-</strong> = Pauza (cisza, nie graj)</p>
-                            <p><strong>|</strong> = Separator taktów (wizualne oddzielenie)</p>
-                            <p><strong>Małe litery (b, t)</strong> = Cichsze/delikatniejsze uderzenia</p>
-                            <p><strong>Jak czytać:</strong> Od lewej do prawej, równe odstępy czasu między każdym znakiem. Graj w tempie podanym przy utworze (BPM).</p>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -416,7 +388,6 @@
             <!-- Techniki Section -->
             <section class="content-section" data-section="techniki">
                 <h2 class="section-title">Techniki gry</h2>
-                <p class="section-description">Kliknij na kartę aby usłyszeć dźwięk</p>
                 <div class="techniques-grid">
                     <div class="technique-card clickable" data-sound="bas">
                         <div class="technique-icon">🥁</div>
@@ -471,6 +442,18 @@
     <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
         <span class="theme-text">Motyw jasny</span>
     </button>
+
+    <!-- Tutorial Modal -->
+    <div class="modal" id="tutorialModal">
+        <div class="modal-overlay" id="tutorialOverlay"></div>
+        <div class="modal-content tutorial-modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="tutorialTitle"></h2>
+                <button class="modal-close" id="tutorialClose">&times;</button>
+            </div>
+            <div class="modal-body" id="tutorialBody"></div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

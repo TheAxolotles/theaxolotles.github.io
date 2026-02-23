@@ -4,85 +4,143 @@ const songDatabase = {
         title: 'Wszystko, co mam to gitara',
         tempo: '120 BPM',
         difficulty: 'Średni',
-        notation: 'B - T - B - T - | B T T - B - T T | B - - T - - B T | B - T - B T T - | B - - T - T B - | B T - - B - T T | B T T T B - T - | B - T T B T - - | B T T - B T T T | B - - T B - T -'
+        notation: 'B - T - B - T - | B T T - B - T T | B - - T - - B T | B - T - B T T - | B - - T - T B - | B T - - B - T T | B T T T B - T - | B - T T B T - - | B T T - B T T T | B - - T B - T -',
+        sections: [
+            { label: 'Intro', start: 0, end: 15 },
+            { label: 'Zwrotka', start: 16, end: 47 },
+            { label: 'Refren', start: 48, end: 79 }
+        ]
     },
     'hej-sokoly': {
         title: 'Hej, sokoły',
         tempo: '140 BPM',
         difficulty: 'Łatwy',
-        notation: 'B - T - B - T - | B - T - B T - - | B - T - B - T T | B - - - B T - - | B T - T B T - T | B - T - B T T - | B T - T B T - T | B - - T B - - -'
+        notation: 'B - T - B - T - | B - T - B T - - | B - T - B - T T | B - - - B T - - | B T - T B T - T | B - T - B T T - | B T - T B T - T | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'krakowiak': {
         title: 'Krakowiak (Krakowiaczek)',
         tempo: '130 BPM',
         difficulty: 'Średni',
-        notation: 'B T B T B T - - | B - T - B T T - | B T B T B - T - | B T - T B - - - | B T T - B T T - | B - T T B T - T | B T T - B T T - | B - - T B - - -'
+        notation: 'B T B T B T - - | B - T - B T T - | B T B T B - T - | B T - T B - - - | B T T - B T T - | B - T T B T - T | B T T - B T T - | B - - T B - - -',
+        sections: [
+            { label: 'Intro', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'plonie-ognisko': {
         title: 'Płonie ognisko i szumią knieje',
         tempo: '110 BPM',
         difficulty: 'Średni',
-        notation: 'B - - T - - B T | B - T T - - B - | B - - T - T B T | B - T - - - B - | B T T - B T T - | B - T T B - T T | B T T - B T - T | B - - T B - - -'
+        notation: 'B - - T - - B T | B - T T - - B - | B - - T - T B T | B - T - - - B - | B T T - B T T - | B - T T B - T T | B T T - B T - T | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'marsz-pierwszej-brygady': {
         title: 'Marsz Pierwszej Brygady',
         tempo: '130 BPM',
         difficulty: 'Trudny',
-        notation: 'B T B T B T T T | B T B T B - T - | B T T - B T T - | B - T T B T - T | B T T T B - T T | B T - T B T T - | B T T T B T T T | B T B T B T T - | B T T T B T T T | B T B T B - - -'
+        notation: 'B T B T B T T T | B T B T B - T - | B T T - B T T - | B - T T B T - T | B T T T B - T T | B T - T B T T - | B T T T B T T T | B T B T B T T - | B T T T B T T T | B T B T B - - -',
+        sections: [
+            { label: 'Intro', start: 0, end: 15 },
+            { label: 'Zwrotka', start: 16, end: 47 },
+            { label: 'Refren', start: 48, end: 79 }
+        ]
     },
     'szla-dzieweczka': {
         title: 'Szła dzieweczka',
         tempo: '100 BPM',
         difficulty: 'Łatwy',
-        notation: 'B - T - B - T - | B - - T B - T - | B - T - B - T - | B - - - B T - - | B - T T B - T - | B - T - B T - - | B - T T B - T T | B - - T B - - -'
+        notation: 'B - T - B - T - | B - - T B - T - | B - T - B - T - | B - - - B T - - | B - T T B - T - | B - T - B T - - | B - T T B - T T | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'op-op-opole': {
         title: 'Op, op, opole',
         tempo: '135 BPM',
         difficulty: 'Łatwy',
-        notation: 'B - T - B T - - | B T - T B - T - | B - T - B T - T | B - - T B - - - | B T T - B T T - | B - T T B T - - | B T T - B T T - | B - - T B - - -'
+        notation: 'B - T - B T - - | B T - T B - T - | B - T - B T - T | B - - T B - - - | B T T - B T T - | B - T T B T - - | B T T - B T T - | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'harcerska-dola': {
         title: 'Harcerska dola',
         tempo: '115 BPM',
         difficulty: 'Średni',
-        notation: 'B - T - B T - - | B T - T B - T - | B - T T B - T - | B T - - B T T - | B T T - B T - T | B - T T B T T - | B T T - B T - T | B - T - B - - -'
+        notation: 'B - T - B T - - | B T - T B - T - | B - T T B - T - | B T - - B T T - | B T T - B T - T | B - T T B T T - | B T T - B T - T | B - T - B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'rozkwitaly-paki-bialek': {
         title: 'Rozkwitały pąki białek',
         tempo: '105 BPM',
         difficulty: 'Średni',
-        notation: 'B - - T - - B T | B - T - - T B - | B - - T - T B T | B T - - - - B - | B T - T B - T T | B - T T B T - - | B T - T B - T T | B - - T B - - -'
+        notation: 'B - - T - - B T | B - T - - T B - | B - - T - T B T | B T - - - - B - | B T - T B - T T | B - T T B T - - | B T - T B - T T | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'serce-w-plecaku': {
         title: 'Serce w plecaku',
         tempo: '125 BPM',
         difficulty: 'Łatwy',
-        notation: 'B - T - B - T - | B T - - B T T - | B - T - B - T T | B - - T B - - - | B T T - B T T - | B - T T B - T T | B T T - B T T - | B - - T B - - -'
+        notation: 'B - T - B - T - | B T - - B T T - | B - T - B - T T | B - - T B - - - | B T T - B T T - | B - T T B - T T | B T T - B T T - | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'ponad-polami': {
         title: 'Ponad polami, lasami',
         tempo: '110 BPM',
         difficulty: 'Średni',
-        notation: 'B - T T - - B T | B - - T - T B - | B T T - - T B T | B - T - - - B - | B T - T B T - T | B - T T B T T - | B T - T B T - T | B - - T B - - -'
+        notation: 'B - T T - - B T | B - - T - T B - | B T T - - T B T | B - T - - - B - | B T - T B T - T | B - T T B T T - | B T - T B T - T | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'wiatry-nam-spiewaja': {
         title: 'Wiatry nam śpiewają',
         tempo: '120 BPM',
         difficulty: 'Łatwy',
-        notation: 'B - T - B - T - | B - T T B - T - | B - T - B T T - | B - - T B - - - | B T T - B T T - | B - T T B T - - | B T T - B T T T | B - - T B - - -'
+        notation: 'B - T - B - T - | B - T T B - T - | B - T - B T T - | B - - T B - - - | B T T - B T T - | B - T T B T - - | B T T - B T T T | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'szalala-w-polu': {
         title: 'Szalała w polu',
         tempo: '125 BPM',
         difficulty: 'Średni',
-        notation: 'B T - T B - T - | B - T T B T - - | B T - T B - T T | B - - T B - - - | B T T - B T - T | B - T T B T T - | B T T - B T - T | B - - T B - - -'
+        notation: 'B T - T B - T - | B - T T B T - - | B T - T B - T T | B - - T B - - - | B T T - B T - T | B - T T B T T - | B T T - B T - T | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     },
     'red-is-the-rose': {
         title: 'Red is the Rose',
         tempo: '95 BPM',
         difficulty: 'Średni',
-        notation: 'B - - T - - B T | B - T - - - B - | B - - T - T B - | B T - - - - B - | B T - T B - T - | B - T - B T - - | B T - T B - T T | B - - T B - - -'
+        notation: 'B - - T - - B T | B - T - - - B - | B - - T - T B - | B T - - - - B - | B T - T B - T - | B - T - B T - - | B T - T B - T T | B - - T B - - -',
+        sections: [
+            { label: 'Zwrotka', start: 0, end: 31 },
+            { label: 'Refren', start: 32, end: 63 }
+        ]
     }
 };
 
@@ -100,24 +158,30 @@ function initAudio() {
 function createBasSound() {
     if (!audioContext) initAudio();
     
-    const duration = 0.4;
+    const duration = 0.5;
     const now = audioContext.currentTime;
     
-    // Layer 1: Deep bass oscillator
+    // Main bass oscillator - very deep
     const osc1 = audioContext.createOscillator();
     const gain1 = audioContext.createGain();
+    const filter1 = audioContext.createBiquadFilter();
     
-    osc1.connect(gain1);
+    osc1.connect(filter1);
+    filter1.connect(gain1);
     gain1.connect(audioContext.destination);
     
     osc1.type = 'sine';
-    osc1.frequency.setValueAtTime(60, now);
-    osc1.frequency.exponentialRampToValueAtTime(30, now + duration);
+    osc1.frequency.setValueAtTime(55, now); // Lower frequency
+    osc1.frequency.exponentialRampToValueAtTime(25, now + duration);
     
-    gain1.gain.setValueAtTime(1.0, now);
-    gain1.gain.exponentialRampToValueAtTime(0.01, now + duration);
+    filter1.type = 'lowpass';
+    filter1.frequency.setValueAtTime(250, now);
+    filter1.Q.setValueAtTime(1, now);
     
-    // Layer 2: Body resonance
+    gain1.gain.setValueAtTime(1.2, now);
+    gain1.gain.exponentialRampToValueAtTime(0.001, now + duration);
+    
+    // Body resonance with more presence
     const osc2 = audioContext.createOscillator();
     const gain2 = audioContext.createGain();
     const filter2 = audioContext.createBiquadFilter();
@@ -127,23 +191,23 @@ function createBasSound() {
     gain2.connect(audioContext.destination);
     
     osc2.type = 'triangle';
-    osc2.frequency.setValueAtTime(120, now);
-    osc2.frequency.exponentialRampToValueAtTime(80, now + duration);
+    osc2.frequency.setValueAtTime(110, now);
+    osc2.frequency.exponentialRampToValueAtTime(60, now + duration);
     
     filter2.type = 'lowpass';
-    filter2.frequency.setValueAtTime(400, now);
-    filter2.Q.setValueAtTime(3, now);
+    filter2.frequency.setValueAtTime(350, now);
+    filter2.Q.setValueAtTime(4, now);
     
-    gain2.gain.setValueAtTime(0.4, now);
-    gain2.gain.exponentialRampToValueAtTime(0.01, now + duration);
+    gain2.gain.setValueAtTime(0.5, now);
+    gain2.gain.exponentialRampToValueAtTime(0.001, now + duration);
     
-    // Layer 3: Attack thump with noise
-    const bufferSize = audioContext.sampleRate * 0.05;
+    // Attack transient with noise
+    const bufferSize = audioContext.sampleRate * 0.08;
     const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
     const data = buffer.getChannelData(0);
     
     for (let i = 0; i < bufferSize; i++) {
-        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.1));
+        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.08));
     }
     
     const noise = audioContext.createBufferSource();
@@ -156,25 +220,41 @@ function createBasSound() {
     noiseGain.connect(audioContext.destination);
     
     noiseFilter.type = 'lowpass';
-    noiseFilter.frequency.setValueAtTime(200, now);
+    noiseFilter.frequency.setValueAtTime(150, now);
     
-    noiseGain.gain.setValueAtTime(0.6, now);
-    noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+    noiseGain.gain.setValueAtTime(0.8, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
+    
+    // Sub bass for extra punch
+    const osc3 = audioContext.createOscillator();
+    const gain3 = audioContext.createGain();
+    
+    osc3.connect(gain3);
+    gain3.connect(audioContext.destination);
+    
+    osc3.type = 'sine';
+    osc3.frequency.setValueAtTime(35, now);
+    osc3.frequency.exponentialRampToValueAtTime(20, now + 0.3);
+    
+    gain3.gain.setValueAtTime(0.7, now);
+    gain3.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
     
     osc1.start(now);
     osc1.stop(now + duration);
     osc2.start(now);
     osc2.stop(now + duration);
+    osc3.start(now);
+    osc3.stop(now + 0.3);
     noise.start(now);
 }
 
 function createTonSound() {
     if (!audioContext) initAudio();
     
-    const duration = 0.2;
+    const duration = 0.25;
     const now = audioContext.currentTime;
     
-    // Layer 1: High frequency snap
+    // Sharp high frequency
     const osc1 = audioContext.createOscillator();
     const gain1 = audioContext.createGain();
     const filter1 = audioContext.createBiquadFilter();
@@ -184,17 +264,17 @@ function createTonSound() {
     gain1.connect(audioContext.destination);
     
     osc1.type = 'square';
-    osc1.frequency.setValueAtTime(1200, now);
-    osc1.frequency.exponentialRampToValueAtTime(400, now + duration);
+    osc1.frequency.setValueAtTime(1500, now);
+    osc1.frequency.exponentialRampToValueAtTime(500, now + duration);
     
     filter1.type = 'bandpass';
-    filter1.frequency.setValueAtTime(2000, now);
-    filter1.Q.setValueAtTime(5, now);
+    filter1.frequency.setValueAtTime(2500, now);
+    filter1.Q.setValueAtTime(8, now);
     
-    gain1.gain.setValueAtTime(0.5, now);
-    gain1.gain.exponentialRampToValueAtTime(0.01, now + duration);
+    gain1.gain.setValueAtTime(0.4, now);
+    gain1.gain.exponentialRampToValueAtTime(0.001, now + duration);
     
-    // Layer 2: Snare-like brightness
+    // Mid range body
     const osc2 = audioContext.createOscillator();
     const gain2 = audioContext.createGain();
     const filter2 = audioContext.createBiquadFilter();
@@ -204,22 +284,42 @@ function createTonSound() {
     gain2.connect(audioContext.destination);
     
     osc2.type = 'sawtooth';
-    osc2.frequency.setValueAtTime(800, now);
-    osc2.frequency.exponentialRampToValueAtTime(300, now + duration);
+    osc2.frequency.setValueAtTime(900, now);
+    osc2.frequency.exponentialRampToValueAtTime(350, now + duration);
     
     filter2.type = 'highpass';
-    filter2.frequency.setValueAtTime(800, now);
+    filter2.frequency.setValueAtTime(600, now);
+    filter2.Q.setValueAtTime(2, now);
     
-    gain2.gain.setValueAtTime(0.3, now);
-    gain2.gain.exponentialRampToValueAtTime(0.01, now + duration);
+    gain2.gain.setValueAtTime(0.25, now);
+    gain2.gain.exponentialRampToValueAtTime(0.001, now + duration);
     
-    // Layer 3: Crisp noise for attack
-    const bufferSize = audioContext.sampleRate * 0.08;
+    // Metallic overtones
+    const osc3 = audioContext.createOscillator();
+    const gain3 = audioContext.createGain();
+    const filter3 = audioContext.createBiquadFilter();
+    
+    osc3.connect(filter3);
+    filter3.connect(gain3);
+    gain3.connect(audioContext.destination);
+    
+    osc3.type = 'square';
+    osc3.frequency.setValueAtTime(3000, now);
+    osc3.frequency.exponentialRampToValueAtTime(1800, now + duration * 0.7);
+    
+    filter3.type = 'highpass';
+    filter3.frequency.setValueAtTime(2000, now);
+    
+    gain3.gain.setValueAtTime(0.15, now);
+    gain3.gain.exponentialRampToValueAtTime(0.001, now + duration * 0.7);
+    
+    // Crisp attack noise
+    const bufferSize = audioContext.sampleRate * 0.06;
     const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
     const data = buffer.getChannelData(0);
     
     for (let i = 0; i < bufferSize; i++) {
-        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.05));
+        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.03));
     }
     
     const noise = audioContext.createBufferSource();
@@ -232,15 +332,18 @@ function createTonSound() {
     noiseGain.connect(audioContext.destination);
     
     noiseFilter.type = 'highpass';
-    noiseFilter.frequency.setValueAtTime(1500, now);
+    noiseFilter.frequency.setValueAtTime(2000, now);
+    noiseFilter.Q.setValueAtTime(3, now);
     
-    noiseGain.gain.setValueAtTime(0.7, now);
-    noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+    noiseGain.gain.setValueAtTime(0.9, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, now + 0.06);
     
     osc1.start(now);
     osc1.stop(now + duration);
     osc2.start(now);
     osc2.stop(now + duration);
+    osc3.start(now);
+    osc3.stop(now + duration * 0.7);
     noise.start(now);
 }
 
@@ -310,7 +413,7 @@ const sidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
 if (sidebarCollapsed) {
     sidebar.classList.add('collapsed');
     const svg = sidebarToggle.querySelector('.toggle-svg path');
-    svg.setAttribute('d', 'M9 18l6-6-6-6');
+    if (svg) svg.setAttribute('d', 'M9 18l6-6-6-6');
 }
 
 // Navigation
@@ -459,17 +562,30 @@ function openModal(songId) {
     const notationContent = document.getElementById('notationContent');
     notationContent.innerHTML = '';
     
-    // Display notation as single combined line
+    // Display notation as single combined line with section labels
     const notationDiv = document.createElement('div');
     notationDiv.className = 'notation-combined';
     
     const measures = song.notation.split(' | ');
+    let beatCounter = 0; // Track current beat position
+    
     measures.forEach((measure, index) => {
         const measureDiv = document.createElement('div');
         measureDiv.className = 'notation-measure';
         
         const beats = measure.split(' ');
         beats.forEach(beat => {
+            // Check if this beat starts a new section
+            if (song.sections) {
+                const section = song.sections.find(s => s.start === beatCounter);
+                if (section) {
+                    const sectionLabel = document.createElement('span');
+                    sectionLabel.className = 'section-label';
+                    sectionLabel.textContent = section.label;
+                    measureDiv.appendChild(sectionLabel);
+                }
+            }
+            
             const beatSpan = document.createElement('span');
             beatSpan.className = 'beat';
             beatSpan.textContent = beat;
@@ -482,6 +598,7 @@ function openModal(songId) {
             }
             
             measureDiv.appendChild(beatSpan);
+            beatCounter++;
         });
         
         if (index < measures.length - 1) {
@@ -604,14 +721,11 @@ document.addEventListener('click', (e) => {
         return;
     }
     
-    // Tutorial cards - toggle details
+    // Tutorial cards - open modal
     const tutorialCard = e.target.closest('.tutorial-card[data-tutorial]');
     if (tutorialCard) {
-        const details = tutorialCard.querySelector('.tutorial-details');
-        if (details) {
-            details.classList.toggle('hidden');
-            tutorialCard.classList.toggle('expanded');
-        }
+        const tutorialId = tutorialCard.getAttribute('data-tutorial');
+        openTutorialModal(tutorialId);
         return;
     }
     
@@ -623,6 +737,173 @@ document.addEventListener('click', (e) => {
         return;
     }
 });
+
+// Tutorial Modal System
+const tutorialModal = document.getElementById('tutorialModal');
+const tutorialOverlay = document.getElementById('tutorialOverlay');
+const tutorialClose = document.getElementById('tutorialClose');
+const tutorialTitle = document.getElementById('tutorialTitle');
+const tutorialBody = document.getElementById('tutorialBody');
+
+const tutorialContent = {
+    'podstawowe': {
+        title: 'Podstawowe uderzenia',
+        content: `
+            <div class="tutorial-section">
+                <h3>Poznaj dwie podstawowe techniki: Bas i Ton</h3>
+                
+                <div class="tutorial-technique">
+                    <h4>🥁 Bas (B)</h4>
+                    <p><strong>Pozycja:</strong> Środek dłoni w centrum płyty czołowej</p>
+                    <p><strong>Technika:</strong> Dłoń całkowicie rozluźniona, uderzenie głębokie i mięsiste</p>
+                    <p><strong>Dźwięk:</strong> To najgłębszy dźwięk cajona - taki jak stopa w perkusji (kick drum)</p>
+                </div>
+                
+                <div class="tutorial-technique">
+                    <h4>🎵 Ton (T)</h4>
+                    <p><strong>Pozycja:</strong> Opuszki palców przy górnej krawędzi płyty</p>
+                    <p><strong>Technika:</strong> Palce lekko napięte, szybkie i ostre uderzenie</p>
+                    <p><strong>Dźwięk:</strong> Wysoki, ostry dźwięk - jak werbel (snare drum)</p>
+                </div>
+                
+                <div class="tutorial-tip">
+                    <strong>💡 Wskazówka:</strong><br>
+                    Ćwicz naprzemiennie B-T-B-T aż poczujesz wyraźną różnicę w brzmieniu. 
+                    Bas powinien brzmieć głęboko i ciepło, ton ostro i jasno.
+                </div>
+            </div>
+        `
+    },
+    'pozycja': {
+        title: 'Pozycja rąk',
+        content: `
+            <div class="tutorial-section">
+                <h3>Prawidłowe ułożenie dłoni jest kluczowe</h3>
+                
+                <div class="tutorial-technique">
+                    <h4>👐 Ręce</h4>
+                    <p>Powinny być rozluźnione i naturalnie zaokrąglone</p>
+                    <p><strong>Nie rób:</strong> Nie zaciskaj pięści ani nie rozciągaj płasko</p>
+                    <p><strong>Rób:</strong> Wyobraź sobie, że trzymasz piłkę tenisową - taka powinna być krzywizna dłoni</p>
+                </div>
+                
+                <div class="tutorial-technique">
+                    <h4>💪 Nadgarstki</h4>
+                    <p>Elastyczne, pozwalają na naturalny ruch. <strong>Nie blokuj ich!</strong></p>
+                    <p>Nadgarstki powinny "oddychać" i poruszać się swobodnie w górę i w dół</p>
+                </div>
+                
+                <div class="tutorial-technique">
+                    <h4>💫 Ramiona i łokcie</h4>
+                    <p>Ramiona swobodnie opuszczone, łokcie lekko rozstawione</p>
+                    <p>Nie przyciskaj łokci do ciała - potrzebujesz przestrzeni do ruchu</p>
+                </div>
+                
+                <div class="tutorial-tip">
+                    <strong>💡 Ćwiczenie:</strong><br>
+                    Potrząśnij rękami jak gdyby się ich pozbywał wody - to idealna rozluźniona pozycja!
+                    Zapamiętaj to uczucie i staraj się je zachować podczas gry.
+                </div>
+            </div>
+        `
+    },
+    'siedzenie': {
+        title: 'Jak siedzieć',
+        content: `
+            <div class="tutorial-section">
+                <h3>Ergonomiczna pozycja zapobiega bólom</h3>
+                
+                <div class="tutorial-technique">
+                    <h4>🪑 Cajon</h4>
+                    <p><strong>Pozycja:</strong> Siadaj centralnie, cajon lekko pochylony do tyłu (około 10-15°)</p>
+                    <p><strong>Dlaczego:</strong> Pochylenie ułatwia dostęp do górnej części płyty i jest wygodniejsze</p>
+                </div>
+                
+                <div class="tutorial-technique">
+                    <h4>🦶 Stopy i kolana</h4>
+                    <p><strong>Stopy:</strong> Płasko na podłodze, na szerokość bioder</p>
+                    <p><strong>Kolana:</strong> Ugięte w kącie około 90°</p>
+                    <p>Stabilna pozycja stóp = stabilna gra!</p>
+                </div>
+                
+                <div class="tutorial-technique">
+                    <h4>🧍 Plecy i tułów</h4>
+                    <p><strong>Plecy:</strong> Proste ale nie sztywne</p>
+                    <p><strong>Tułów:</strong> Lekko pochylony do przodu (maksymalnie 10-15°)</p>
+                    <p><strong>Nie rób:</strong> Nie pochylaj się nadmiernie nad cajonem - to męczy!</p>
+                </div>
+                
+                <div class="tutorial-technique">
+                    <h4>📏 Wysokość</h4>
+                    <p>Ręce powinny swobodnie sięgać górnej części płyty bez nadmiernego wyciągania</p>
+                    <p>Jeśli musisz się bardzo wyciągać - użyj podkładki pod stopy lub wybierz niższy cajon</p>
+                </div>
+                
+                <div class="tutorial-tip">
+                    <strong>💡 Pamiętaj:</strong><br>
+                    Dobra pozycja pozwala grać godzinami bez zmęczenia. 
+                    Przestań co jakiś czas i się rozciągnij - Twoje ciało ci podziękuje!
+                </div>
+            </div>
+        `
+    },
+    'nuty': {
+        title: 'Czytanie nut',
+        content: `
+            <div class="tutorial-section">
+                <h3>Nasz system notacji jest prosty i intuicyjny</h3>
+                
+                <div class="tutorial-technique">
+                    <h4>📝 Podstawowe znaki</h4>
+                    <p><strong>B</strong> = Bas (głęboki dźwięk, środek dłoni, centrum płyty)</p>
+                    <p><strong>T</strong> = Ton (wysoki dźwięk, palce, góra płyty)</p>
+                    <p><strong>-</strong> = Pauza (cisza, nie graj, liczone w rytmie)</p>
+                    <p><strong>|</strong> = Separator taktów (wizualne oddzielenie, nie graj)</p>
+                </div>
+                
+                <div class="tutorial-technique">
+                    <h4>🔤 Zaawansowane oznaczenia</h4>
+                    <p><strong>b, t</strong> (małe litery) = Cichsze/delikatniejsze uderzenia (ghost notes)</p>
+                    <p>Używane do dodania niuansów i dynamiki</p>
+                </div>
+                
+                <div class="tutorial-technique">
+                    <h4>📖 Jak czytać</h4>
+                    <p><strong>1.</strong> Zawsze od lewej do prawej</p>
+                    <p><strong>2.</strong> Każdy znak zajmuje równy czas (równe odstępy)</p>
+                    <p><strong>3.</strong> Tempo podane jest przy utworze (np. 120 BPM = 120 uderzeń na minutę)</p>
+                    <p><strong>4.</strong> Separator | dzieli nuty na takty dla łatwiejszego czytania</p>
+                </div>
+                
+                <div class="tutorial-tip">
+                    <strong>💡 Przykład:</strong><br>
+                    <code class="notation-example">B - T - B T - - | B T T - B - T T</code><br><br>
+                    Czytaj: "Bas, pauza, Ton, pauza, Bas-Ton, pauza, pauza | Bas-Ton-Ton, pauza, Bas, pauza, Ton-Ton"<br>
+                    Zachowuj stały rytm - pauzy są równie ważne jak uderzenia!
+                </div>
+            </div>
+        `
+    }
+};
+
+function openTutorialModal(tutorialId) {
+    const tutorial = tutorialContent[tutorialId];
+    if (!tutorial) return;
+    
+    tutorialTitle.textContent = tutorial.title;
+    tutorialBody.innerHTML = tutorial.content;
+    
+    tutorialModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeTutorialModal() {
+    tutorialModal.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+tutorialClose.addEventListener('click', closeTutorialModal);
+tutorialOverlay.addEventListener('click', closeTutorialModal);
 
 // Exercise Cards - click to play
 const exerciseCards = document.querySelectorAll('.exercise-card');

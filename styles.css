@@ -291,26 +291,35 @@ body {
 }
 
 .sort-select {
-    background-color: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 10px 16px;
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-secondary) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px 20px;
     color: var(--text-primary);
     font-family: inherit;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px var(--shadow);
+    position: relative;
 }
 
 .sort-select:hover {
-    background-color: var(--bg-hover);
+    background: linear-gradient(135deg, var(--bg-hover) 0%, var(--bg-tertiary) 100%);
     border-color: var(--zhp-green);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px var(--shadow), 0 0 0 3px rgba(130, 164, 39, 0.1);
 }
 
 .sort-select:focus {
     outline: none;
     border-color: var(--zhp-green);
+    box-shadow: 0 4px 16px var(--shadow), 0 0 0 3px rgba(130, 164, 39, 0.2);
+}
+
+.sort-select:active {
+    transform: translateY(0);
 }
 
 .filter-btn,
@@ -543,13 +552,13 @@ body {
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    padding: 16px 20px;
+    padding: 10px 14px;
     cursor: pointer;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 12px;
 }
 
 .song-item:hover {
@@ -1104,6 +1113,23 @@ body {
     padding: 8px 12px;
     background-color: var(--bg-tertiary);
     border-radius: 8px;
+    position: relative;
+}
+
+.section-label {
+    position: absolute;
+    top: -24px;
+    left: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--zhp-green);
+    background-color: var(--bg-secondary);
+    padding: 2px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid var(--zhp-green);
+    font-family: 'Museo Sans', sans-serif;
 }
 
 .notation-measure .beat {
