@@ -14,10 +14,12 @@
                 <img src="assets/zhp-logo.svg" alt="ZHP Logo" class="zhp-logo">
                 <h1 class="app-title">CajonHarc</h1>
             </div>
-            <button class="sidebar-toggle" id="sidebarToggle" aria-label="Zwiń menu">
-                <span class="toggle-icon">◀</span>
-            </button>
         </div>
+        <button class="sidebar-toggle-new" id="sidebarToggle" aria-label="Zwiń/Rozwiń menu">
+            <svg class="toggle-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
 
         <nav class="sidebar-nav">
             <div class="nav-section">
@@ -36,9 +38,7 @@
             </div>
         </nav>
 
-        <div class="sidebar-footer">
-            <p class="sidebar-motto">Czuwaj!</p>
-        </div>
+
     </aside>
 
     <!-- Main Content -->
@@ -49,7 +49,15 @@
                 <input type="text" class="search-input" placeholder="Szukaj..." id="searchInput">
             </div>
             <div class="user-actions">
+                <select class="sort-select" id="sortSelect">
+                    <option value="default">Sortuj...</option>
+                    <option value="title-asc">Nazwa A-Z</option>
+                    <option value="title-desc">Nazwa Z-A</option>
+                    <option value="difficulty-asc">Łatwość</option>
+                    <option value="difficulty-desc">Trudność</option>
+                </select>
                 <button class="filter-btn" id="filterBtn">Filtry</button>
+                <button class="favorites-btn" id="favoritesBtn">Ulubione</button>
             </div>
         </header>
 
@@ -98,34 +106,130 @@
                 <h2 class="section-title">Pieśni harcerskie</h2>
                 <div class="songs-list">
                     <div class="song-item" data-song="wszystko-co-mam" data-difficulty="sredni" data-category="popularna">
-                        <span class="song-title">Wszystko, co mam to gitara</span>
+                        <div class="song-info">
+                            <span class="song-title">Wszystko, co mam to gitara</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                     <div class="song-item" data-song="hej-sokoly" data-difficulty="latwy" data-category="klasyka">
-                        <span class="song-title">Hej, sokoły</span>
+                        <div class="song-info">
+                            <span class="song-title">Hej, sokoły</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
+                    </div>
+                    <div class="song-item" data-song="krakowiak" data-difficulty="sredni" data-category="popularna">
+                        <div class="song-info">
+                            <span class="song-title">Krakowiak (Krakowiaczek)</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                     <div class="song-item" data-song="plonie-ognisko" data-difficulty="sredni" data-category="klasyka">
-                        <span class="song-title">Płonie ognisko i szumią knieje</span>
+                        <div class="song-info">
+                            <span class="song-title">Płonie ognisko i szumią knieje</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                     <div class="song-item" data-song="marsz-pierwszej-brygady" data-difficulty="trudny" data-category="patriotyczna">
-                        <span class="song-title">Marsz Pierwszej Brygady</span>
+                        <div class="song-info">
+                            <span class="song-title">Marsz Pierwszej Brygady</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                     <div class="song-item" data-song="szla-dzieweczka" data-difficulty="latwy" data-category="klasyka">
-                        <span class="song-title">Szła dzieweczka</span>
+                        <div class="song-info">
+                            <span class="song-title">Szła dzieweczka</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
+                    </div>
+                    <div class="song-item" data-song="op-op-opole" data-difficulty="latwy" data-category="popularna">
+                        <div class="song-info">
+                            <span class="song-title">Op, op, opole</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                     <div class="song-item" data-song="harcerska-dola" data-difficulty="sredni" data-category="harcerska">
-                        <span class="song-title">Harcerska dola</span>
+                        <div class="song-info">
+                            <span class="song-title">Harcerska dola</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                     <div class="song-item" data-song="rozkwitaly-paki-bialek" data-difficulty="sredni" data-category="patriotyczna">
-                        <span class="song-title">Rozkwitały pąki białek</span>
+                        <div class="song-info">
+                            <span class="song-title">Rozkwitały pąki białek</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                     <div class="song-item" data-song="serce-w-plecaku" data-difficulty="latwy" data-category="harcerska">
-                        <span class="song-title">Serce w plecaku</span>
+                        <div class="song-info">
+                            <span class="song-title">Serce w plecaku</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                     <div class="song-item" data-song="ponad-polami" data-difficulty="sredni" data-category="harcerska">
-                        <span class="song-title">Ponad polami, lasami</span>
+                        <div class="song-info">
+                            <span class="song-title">Ponad polami, lasami</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                     <div class="song-item" data-song="wiatry-nam-spiewaja" data-difficulty="latwy" data-category="harcerska">
-                        <span class="song-title">Wiatry nam śpiewają</span>
+                        <div class="song-info">
+                            <span class="song-title">Wiatry nam śpiewają</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
+                    </div>
+                    <div class="song-item" data-song="szalala-w-polu" data-difficulty="sredni" data-category="popularna">
+                        <div class="song-info">
+                            <span class="song-title">Szalała w polu</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
+                    </div>
+                    <div class="song-item" data-song="red-is-the-rose" data-difficulty="sredni" data-category="popularna">
+                        <div class="song-info">
+                            <span class="song-title">Red is the Rose</span>
+                        </div>
+                        <div class="song-actions">
+                            <button class="play-btn" title="Odtwórz">▶</button>
+                            <button class="favorite-btn" title="Dodaj do ulubionych">☆</button>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -133,22 +237,51 @@
             <!-- Nauka Section -->
             <section class="content-section" data-section="nauka">
                 <h2 class="section-title">Jak grać na cajonie</h2>
+                
+                <div class="youtube-tutorials">
+                    <h3 class="subsection-title">📺 Tutoriale wideo</h3>
+                    <div class="video-grid">
+                        <div class="video-card" data-video="dQw4w9WgXcQ">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="Tutorial">
+                                <div class="play-overlay">▶</div>
+                            </div>
+                            <h4>Podstawy gry na cajonie</h4>
+                        </div>
+                        <div class="video-card" data-video="dQw4w9WgXcQ">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="Tutorial">
+                                <div class="play-overlay">▶</div>
+                            </div>
+                            <h4>Technika uderzeń</h4>
+                        </div>
+                        <div class="video-card" data-video="dQw4w9WgXcQ">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/mqdefault.jpg" alt="Tutorial">
+                                <div class="play-overlay">▶</div>
+                            </div>
+                            <h4>Rytmy harcerskie</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">📚 Poradniki</h3>
                 <div class="tutorial-list">
                     <div class="tutorial-card">
                         <h3>Podstawowe uderzenia</h3>
-                        <p>Poznaj dwie podstawowe techniki: bas i ton</p>
+                        <p>Poznaj dwie podstawowe techniki: bas i ton. Bas powstaje przez uderzenie środkiem dłoni w centrum płyty, a ton przez uderzenie opuszkami palców przy górnej krawędzi.</p>
                     </div>
                     <div class="tutorial-card">
                         <h3>Pozycja rąk</h3>
-                        <p>Prawidłowe ułożenie dłoni dla najlepszego brzmienia</p>
+                        <p>Prawidłowe ułożenie dłoni dla najlepszego brzmienia. Ręce powinny być rozluźnione, a nadgarstki elastyczne.</p>
                     </div>
                     <div class="tutorial-card">
                         <h3>Jak siedzieć</h3>
-                        <p>Ergonomiczna pozycja ciała podczas gry</p>
+                        <p>Ergonomiczna pozycja ciała podczas gry. Siedź prosto, stopy płasko na podłodze, cajon lekko pochylony.</p>
                     </div>
                     <div class="tutorial-card">
                         <h3>Czytanie nut</h3>
-                        <p>Jak odczytywać nuty do cajona w naszym systemie</p>
+                        <p>Jak odczytywać nuty do cajona w naszym systemie. B = Bas, T = Ton, - = Pauza. Czytaj od lewej do prawej.</p>
                     </div>
                 </div>
             </section>
@@ -162,8 +295,24 @@
                             <h3>Podstawowy rytm 4/4</h3>
                             <span class="difficulty easy">Łatwy</span>
                         </div>
-                        <p class="exercise-description">Ćwiczenie fundamentalne</p>
+                        <p class="exercise-description">Ćwiczenie fundamentalne dla początkujących</p>
                         <div class="exercise-pattern">B - - T - - B T</div>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <h3>Naprzemienne uderzenia</h3>
+                            <span class="difficulty easy">Łatwy</span>
+                        </div>
+                        <p class="exercise-description">Nauka koordynacji rąk</p>
+                        <div class="exercise-pattern">B T B T B T B T</div>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <h3>Podwójne tony</h3>
+                            <span class="difficulty easy">Łatwy</span>
+                        </div>
+                        <p class="exercise-description">Wzmacnianie precyzji tonów</p>
+                        <div class="exercise-pattern">B - T T B - T T</div>
                     </div>
                     <div class="exercise-card">
                         <div class="exercise-header">
@@ -175,11 +324,67 @@
                     </div>
                     <div class="exercise-card">
                         <div class="exercise-header">
+                            <h3>Trójki</h3>
+                            <span class="difficulty medium">Średni</span>
+                        </div>
+                        <p class="exercise-description">Grupowanie uderzeń po trzy</p>
+                        <div class="exercise-pattern">B T T B T T B T T</div>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <h3>Synkopy</h3>
+                            <span class="difficulty medium">Średni</span>
+                        </div>
+                        <p class="exercise-description">Przesunięcia akcentów rytmicznych</p>
+                        <div class="exercise-pattern">B - T - B T - B</div>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <h3>Flam (ozdobniki)</h3>
+                            <span class="difficulty medium">Średni</span>
+                        </div>
+                        <p class="exercise-description">Dodawanie ornamentów do rytmu</p>
+                        <div class="exercise-pattern">t B T t B T t B</div>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
                             <h3>Akcenty dynamiczne</h3>
                             <span class="difficulty hard">Trudny</span>
                         </div>
                         <p class="exercise-description">Praca nad dynamiką i ekspresją</p>
                         <div class="exercise-pattern">B t T t b T B T</div>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <h3>Paradiddle</h3>
+                            <span class="difficulty hard">Trudny</span>
+                        </div>
+                        <p class="exercise-description">Zaawansowany wzór perkusyjny</p>
+                        <div class="exercise-pattern">B T B B T B T T</div>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <h3>Szybkie przejścia</h3>
+                            <span class="difficulty hard">Trudny</span>
+                        </div>
+                        <p class="exercise-description">Błyskawiczne zmiany między technikami</p>
+                        <div class="exercise-pattern">B T T T B B T B T</div>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <h3>Złożony rytm 7/8</h3>
+                            <span class="difficulty hard">Trudny</span>
+                        </div>
+                        <p class="exercise-description">Nietypowy metrum dla zaawansowanych</p>
+                        <div class="exercise-pattern">B T T B T B T</div>
+                    </div>
+                    <div class="exercise-card">
+                        <div class="exercise-header">
+                            <h3>Wypełnienia (fills)</h3>
+                            <span class="difficulty hard">Trudny</span>
+                        </div>
+                        <p class="exercise-description">Dekoracyjne przejścia między sekcjami</p>
+                        <div class="exercise-pattern">B T B T T B T T B T</div>
                     </div>
                 </div>
             </section>
@@ -188,13 +393,17 @@
             <section class="content-section" data-section="techniki">
                 <h2 class="section-title">Techniki gry</h2>
                 <div class="techniques-grid">
-                    <div class="technique-card">
+                    <div class="technique-card clickable" data-sound="bas">
+                        <div class="technique-icon">🥁</div>
                         <h3>Bas (B)</h3>
-                        <p>Uderz środkiem dłoni w centrum płyty czołowej. Dłoń powinna być rozluźniona.</p>
+                        <p>Uderz środkiem dłoni w centrum płyty czołowej. Dłoń powinna być rozluźniona, a uderzenie głębokie.</p>
+                        <button class="sound-test-btn">Odtwórz dźwięk Basu</button>
                     </div>
-                    <div class="technique-card">
+                    <div class="technique-card clickable" data-sound="ton">
+                        <div class="technique-icon">🎵</div>
                         <h3>Ton (T)</h3>
-                        <p>Uderz palcami w górną część płyty, blisko krawędzi. Ręka lekko napięta.</p>
+                        <p>Uderz palcami w górną część płyty, blisko krawędzi. Ręka lekko napięta, dźwięk wysoki i ostry.</p>
+                        <button class="sound-test-btn">Odtwórz dźwięk Tonu</button>
                     </div>
                 </div>
             </section>
@@ -207,7 +416,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title" id="modalTitle"></h2>
-                <button class="modal-close" id="modalClose">&times;</button>
+                <div class="modal-actions">
+                    <button class="play-modal-btn" id="playModalBtn" title="Odtwórz">▶</button>
+                    <button class="modal-close" id="modalClose">&times;</button>
+                </div>
             </div>
             <div class="modal-body" id="modalBody">
                 <div class="sheet-info">
