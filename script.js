@@ -1,10 +1,210 @@
+// Song Database with Cajon Notation (B = Bas, T = Ton, - = Rest)
+const songDatabase = {
+    'wszystko-co-mam': {
+        title: 'Wszystko, co mam to gitara',
+        tempo: '120 BPM',
+        difficulty: 'Średni',
+        notation: [
+            { section: 'Intro', lines: [
+                'B - T - B - T -',
+                'B T T - B - T T'
+            ]},
+            { section: 'Zwrotka', lines: [
+                'B - - T - - B T',
+                'B - T - B T T -',
+                'B - - T - T B -',
+                'B T - - B - T T'
+            ]},
+            { section: 'Refren', lines: [
+                'B T T T B - T -',
+                'B - T T B T - -',
+                'B T T - B T T T',
+                'B - - T B - T -'
+            ]}
+        ]
+    },
+    'hej-sokoly': {
+        title: 'Hej, sokoły',
+        tempo: '140 BPM',
+        difficulty: 'Łatwy',
+        notation: [
+            { section: 'Zwrotka', lines: [
+                'B - T - B - T -',
+                'B - T - B T - -',
+                'B - T - B - T T',
+                'B - - - B T - -'
+            ]},
+            { section: 'Refren', lines: [
+                'B T - T B T - T',
+                'B - T - B T T -',
+                'B T - T B T - T',
+                'B - - T B - - -'
+            ]}
+        ]
+    },
+    'plonie-ognisko': {
+        title: 'Płonie ognisko i szumią knieje',
+        tempo: '110 BPM',
+        difficulty: 'Średni',
+        notation: [
+            { section: 'Zwrotka', lines: [
+                'B - - T - - B T',
+                'B - T T - - B -',
+                'B - - T - T B T',
+                'B - T - - - B -'
+            ]},
+            { section: 'Refren', lines: [
+                'B T T - B T T -',
+                'B - T T B - T T',
+                'B T T - B T - T',
+                'B - - T B - - -'
+            ]}
+        ]
+    },
+    'marsz-pierwszej-brygady': {
+        title: 'Marsz Pierwszej Brygady',
+        tempo: '130 BPM',
+        difficulty: 'Trudny',
+        notation: [
+            { section: 'Intro', lines: [
+                'B T B T B T T T',
+                'B T B T B - T -'
+            ]},
+            { section: 'Zwrotka', lines: [
+                'B T T - B T T -',
+                'B - T T B T - T',
+                'B T T T B - T T',
+                'B T - T B T T -'
+            ]},
+            { section: 'Refren', lines: [
+                'B T T T B T T T',
+                'B T B T B T T -',
+                'B T T T B T T T',
+                'B T B T B - - -'
+            ]}
+        ]
+    },
+    'szla-dzieweczka': {
+        title: 'Szła dzieweczka',
+        tempo: '100 BPM',
+        difficulty: 'Łatwy',
+        notation: [
+            { section: 'Zwrotka', lines: [
+                'B - T - B - T -',
+                'B - - T B - T -',
+                'B - T - B - T -',
+                'B - - - B T - -'
+            ]},
+            { section: 'Refren', lines: [
+                'B - T T B - T -',
+                'B - T - B T - -',
+                'B - T T B - T T',
+                'B - - T B - - -'
+            ]}
+        ]
+    },
+    'harcerska-dola': {
+        title: 'Harcerska dola',
+        tempo: '115 BPM',
+        difficulty: 'Średni',
+        notation: [
+            { section: 'Zwrotka', lines: [
+                'B - T - B T - -',
+                'B T - T B - T -',
+                'B - T T B - T -',
+                'B T - - B T T -'
+            ]},
+            { section: 'Refren', lines: [
+                'B T T - B T - T',
+                'B - T T B T T -',
+                'B T T - B T - T',
+                'B - T - B - - -'
+            ]}
+        ]
+    },
+    'rozkwitaly-paki-bialek': {
+        title: 'Rozkwitały pąki białek',
+        tempo: '105 BPM',
+        difficulty: 'Średni',
+        notation: [
+            { section: 'Zwrotka', lines: [
+                'B - - T - - B T',
+                'B - T - - T B -',
+                'B - - T - T B T',
+                'B T - - - - B -'
+            ]},
+            { section: 'Refren', lines: [
+                'B T - T B - T T',
+                'B - T T B T - -',
+                'B T - T B - T T',
+                'B - - T B - - -'
+            ]}
+        ]
+    },
+    'serce-w-plecaku': {
+        title: 'Serce w plecaku',
+        tempo: '125 BPM',
+        difficulty: 'Łatwy',
+        notation: [
+            { section: 'Zwrotka', lines: [
+                'B - T - B - T -',
+                'B T - - B T T -',
+                'B - T - B - T T',
+                'B - - T B - - -'
+            ]},
+            { section: 'Refren', lines: [
+                'B T T - B T T -',
+                'B - T T B - T T',
+                'B T T - B T T -',
+                'B - - T B - - -'
+            ]}
+        ]
+    },
+    'ponad-polami': {
+        title: 'Ponad polami, lasami',
+        tempo: '110 BPM',
+        difficulty: 'Średni',
+        notation: [
+            { section: 'Zwrotka', lines: [
+                'B - T T - - B T',
+                'B - - T - T B -',
+                'B T T - - T B T',
+                'B - T - - - B -'
+            ]},
+            { section: 'Refren', lines: [
+                'B T - T B T - T',
+                'B - T T B T T -',
+                'B T - T B T - T',
+                'B - - T B - - -'
+            ]}
+        ]
+    },
+    'wiatry-nam-spiewaja': {
+        title: 'Wiatry nam śpiewają',
+        tempo: '120 BPM',
+        difficulty: 'Łatwy',
+        notation: [
+            { section: 'Zwrotka', lines: [
+                'B - T - B - T -',
+                'B - T T B - T -',
+                'B - T - B T T -',
+                'B - - T B - - -'
+            ]},
+            { section: 'Refren', lines: [
+                'B T T - B T T -',
+                'B - T T B T - -',
+                'B T T - B T T T',
+                'B - - T B - - -'
+            ]}
+        ]
+    }
+};
+
 // Theme Management
 const themeToggle = document.getElementById('themeToggle');
 const html = document.documentElement;
-const themeIcon = document.querySelector('.theme-icon');
 const themeText = document.querySelector('.theme-text');
 
-// Load saved theme or default to dark
 const savedTheme = localStorage.getItem('theme') || 'dark';
 html.setAttribute('data-theme', savedTheme);
 updateThemeButton(savedTheme);
@@ -19,13 +219,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 function updateThemeButton(theme) {
-    if (theme === 'dark') {
-        themeIcon.textContent = '☀️';
-        themeText.textContent = 'Motyw jasny';
-    } else {
-        themeIcon.textContent = '🌙';
-        themeText.textContent = 'Motyw ciemny';
-    }
+    themeText.textContent = theme === 'dark' ? 'Motyw jasny' : 'Motyw ciemny';
 }
 
 // Sidebar Toggle
@@ -34,11 +228,9 @@ const sidebarToggle = document.getElementById('sidebarToggle');
 
 sidebarToggle.addEventListener('click', () => {
     sidebar.classList.toggle('collapsed');
-    const isCollapsed = sidebar.classList.contains('collapsed');
-    localStorage.setItem('sidebarCollapsed', isCollapsed);
+    localStorage.setItem('sidebarCollapsed', sidebar.classList.contains('collapsed'));
 });
 
-// Load sidebar state
 const sidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
 if (sidebarCollapsed) {
     sidebar.classList.add('collapsed');
@@ -52,142 +244,173 @@ navItems.forEach(item => {
     item.addEventListener('click', () => {
         const sectionName = item.getAttribute('data-section');
         
-        // Update active nav item
         navItems.forEach(nav => nav.classList.remove('active'));
         item.classList.add('active');
         
-        // Show corresponding content section
         contentSections.forEach(section => {
-            if (section.getAttribute('data-section') === sectionName) {
-                section.classList.add('active');
-            } else {
-                section.classList.remove('active');
-            }
+            section.classList.toggle('active', section.getAttribute('data-section') === sectionName);
         });
         
-        // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 });
 
+// Filter System
+const filterBtn = document.getElementById('filterBtn');
+const filterPanel = document.getElementById('filterPanel');
+const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+
+filterBtn.addEventListener('click', () => {
+    filterPanel.classList.toggle('open');
+    filterBtn.classList.toggle('active');
+});
+
+filterCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', applyFilters);
+});
+
+function applyFilters() {
+    const selectedDifficulties = Array.from(document.querySelectorAll('.filter-checkbox[data-filter="difficulty"]:checked'))
+        .map(cb => cb.value);
+    const selectedCategories = Array.from(document.querySelectorAll('.filter-checkbox[data-filter="category"]:checked'))
+        .map(cb => cb.value);
+    
+    const songItems = document.querySelectorAll('.song-item');
+    
+    songItems.forEach(item => {
+        const difficulty = item.getAttribute('data-difficulty');
+        const category = item.getAttribute('data-category');
+        
+        const matchesDifficulty = selectedDifficulties.includes(difficulty);
+        const matchesCategory = selectedCategories.includes(category);
+        
+        item.style.display = (matchesDifficulty && matchesCategory) ? 'block' : 'none';
+    });
+}
+
 // Search Functionality
 const searchInput = document.getElementById('searchInput');
-const songCards = document.querySelectorAll('.song-card');
 
 searchInput.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
+    const songItems = document.querySelectorAll('.song-item');
     
-    songCards.forEach(card => {
-        const title = card.querySelector('.song-title').textContent.toLowerCase();
-        const meta = card.querySelector('.song-meta').textContent.toLowerCase();
+    songItems.forEach(item => {
+        const title = item.querySelector('.song-title').textContent.toLowerCase();
+        item.style.display = title.includes(searchTerm) ? 'block' : 'none';
+    });
+});
+
+// Modal System
+const modal = document.getElementById('sheetModal');
+const modalOverlay = document.getElementById('modalOverlay');
+const modalClose = document.getElementById('modalClose');
+const modalTitle = document.getElementById('modalTitle');
+const modalBody = document.getElementById('modalBody');
+
+function openModal(songId) {
+    const song = songDatabase[songId];
+    if (!song) return;
+    
+    modalTitle.textContent = song.title;
+    document.getElementById('sheetTempo').textContent = song.tempo;
+    document.getElementById('sheetDifficulty').textContent = song.difficulty;
+    
+    const notationContent = document.getElementById('notationContent');
+    notationContent.innerHTML = '';
+    
+    song.notation.forEach(section => {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.className = 'notation-section';
         
-        if (title.includes(searchTerm) || meta.includes(searchTerm)) {
-            card.style.display = 'flex';
-        } else {
-            card.style.display = 'none';
-        }
+        const sectionTitle = document.createElement('div');
+        sectionTitle.className = 'notation-section-title';
+        sectionTitle.textContent = section.section;
+        sectionDiv.appendChild(sectionTitle);
+        
+        section.lines.forEach(line => {
+            const lineDiv = document.createElement('div');
+            lineDiv.className = 'notation-line';
+            
+            line.split('').forEach(char => {
+                const beat = document.createElement('span');
+                beat.className = 'beat';
+                beat.textContent = char;
+                
+                if (char === 'B') beat.classList.add('bas');
+                else if (char === 'T') beat.classList.add('ton');
+                else if (char === '-') beat.classList.add('rest');
+                
+                lineDiv.appendChild(beat);
+            });
+            
+            sectionDiv.appendChild(lineDiv);
+        });
+        
+        notationContent.appendChild(sectionDiv);
     });
-});
-
-// Song Card Click Handlers
-songCards.forEach(card => {
-    const playBtn = card.querySelector('.play-btn');
     
-    playBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const songName = card.getAttribute('data-song');
-        openSongSheet(songName);
-    });
-    
-    card.addEventListener('click', () => {
-        const songName = card.getAttribute('data-song');
-        openSongSheet(songName);
-    });
-});
-
-function openSongSheet(songName) {
-    // Placeholder for opening song sheet modal/page
-    alert(`Otwieranie nut dla: ${songName}\n\nTa funkcjonalność zostanie dodana wkrótce!`);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
 }
 
-// Tutorial Cards
+function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', closeModal);
+
+// Song Item Clicks
+const songItems = document.querySelectorAll('.song-item');
+songItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const songId = item.getAttribute('data-song');
+        openModal(songId);
+    });
+});
+
+// Tutorial & Exercise Cards
 const tutorialCards = document.querySelectorAll('.tutorial-card');
 tutorialCards.forEach(card => {
     card.addEventListener('click', () => {
         const title = card.querySelector('h3').textContent;
-        alert(`Otwieranie samouczka: ${title}\n\nTa funkcjonalność zostanie dodana wkrótce!`);
+        alert(`Otwieranie: ${title}\n\nTa sekcja zostanie wkrótce rozbudowana!`);
     });
 });
 
-// Exercise Cards
 const exerciseCards = document.querySelectorAll('.exercise-card');
 exerciseCards.forEach(card => {
     card.addEventListener('click', () => {
         const title = card.querySelector('h3').textContent;
-        alert(`Otwieranie ćwiczenia: ${title}\n\nTa funkcjonalność zostanie dodana wkrótce!`);
+        alert(`Otwieranie: ${title}\n\nTa sekcja zostanie wkrótce rozbudowana!`);
     });
-});
-
-// Technique Cards
-const techniqueCards = document.querySelectorAll('.technique-card');
-techniqueCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const title = card.querySelector('h3').textContent;
-        alert(`Otwieranie techniki: ${title}\n\nTa funkcjonalność zostanie dodana wkrótce!`);
-    });
-});
-
-// Filter Button
-const filterBtn = document.getElementById('filterBtn');
-filterBtn.addEventListener('click', () => {
-    alert('Panel filtrów zostanie dodany wkrótce!');
 });
 
 // Keyboard Shortcuts
 document.addEventListener('keydown', (e) => {
-    // Ctrl/Cmd + K for search focus
     if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         searchInput.focus();
     }
     
-    // Ctrl/Cmd + B for sidebar toggle
     if ((e.ctrlKey || e.metaKey) && e.key === 'b') {
         e.preventDefault();
         sidebar.classList.toggle('collapsed');
     }
     
-    // Ctrl/Cmd + T for theme toggle
     if ((e.ctrlKey || e.metaKey) && e.key === 't') {
         e.preventDefault();
         themeToggle.click();
     }
+    
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeModal();
+    }
 });
 
-// Add smooth scroll behavior
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
-
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.3s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-});
-
-// Console greeting
-console.log('%c🏕️ CajonHarc - Nuty na Cajon 🥁', 'color: #82a427; font-size: 20px; font-weight: bold;');
-console.log('%cCzuwaj! ⚜️', 'color: #82a427; font-size: 16px;');
-console.log('%cSkróty klawiszowe:', 'color: #82a427; font-weight: bold;');
-console.log('Ctrl/Cmd + K - Szukaj');
-console.log('Ctrl/Cmd + B - Pokaż/Ukryj menu');
-console.log('Ctrl/Cmd + T - Zmień motyw');
+// Console Message
+console.log('%cCajonHarc - Nuty na Cajon', 'color: #82a427; font-size: 18px; font-weight: bold;');
+console.log('%cCzuwaj!', 'color: #82a427; font-size: 14px;');
+console.log('Skróty: Ctrl+K (szukaj), Ctrl+B (menu), Ctrl+T (motyw), ESC (zamknij)');
