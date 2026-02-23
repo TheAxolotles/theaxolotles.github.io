@@ -88,8 +88,7 @@ const songDatabase = {
 
 // Audio Context for Cajon Sounds
 let audioContext = null;
-let basSound = null;
-let tonSound = null;
+let currentPlayInterval = null;
 
 function initAudio() {
     if (!audioContext) {
@@ -97,61 +96,152 @@ function initAudio() {
     }
 }
 
-// Generate realistic cajon sounds using Web Audio API
+// Generate realistic cajon sounds using Web Audio API - IMPROVED
 function createBasSound() {
     if (!audioContext) initAudio();
     
-    const duration = 0.3;
+    const duration = 0.4;
     const now = audioContext.currentTime;
     
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    const filter = audioContext.createBiquadFilter();
+    // Layer 1: Deep bass oscillator
+    const osc1 = audioContext.createOscillator();
+    const gain1 = audioContext.createGain();
     
-    oscillator.connect(filter);
-    filter.connect(gainNode);
-    gainNode.connect(audioContext.destination);
+    osc1.connect(gain1);
+    gain1.connect(audioContext.destination);
     
-    oscillator.type = 'sine';
-    oscillator.frequency.setValueAtTime(80, now);
-    oscillator.frequency.exponentialRampToValueAtTime(40, now + duration);
+    osc1.type = 'sine';
+    osc1.frequency.setValueAtTime(60, now);
+    osc1.frequency.exponentialRampToValueAtTime(30, now + duration);
     
-    filter.type = 'lowpass';
-    filter.frequency.setValueAtTime(300, now);
+    gain1.gain.setValueAtTime(1.0, now);
+    gain1.gain.exponentialRampToValueAtTime(0.01, now + duration);
     
-    gainNode.gain.setValueAtTime(0.8, now);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, now + duration);
+    // Layer 2: Body resonance
+    const osc2 = audioContext.createOscillator();
+    const gain2 = audioContext.createGain();
+    const filter2 = audioContext.createBiquadFilter();
     
-    oscillator.start(now);
-    oscillator.stop(now + duration);
+    osc2.connect(filter2);
+    filter2.connect(gain2);
+    gain2.connect(audioContext.destination);
+    
+    osc2.type = 'triangle';
+    osc2.frequency.setValueAtTime(120, now);
+    osc2.frequency.exponentialRampToValueAtTime(80, now + duration);
+    
+    filter2.type = 'lowpass';
+    filter2.frequency.setValueAtTime(400, now);
+    filter2.Q.setValueAtTime(3, now);
+    
+    gain2.gain.setValueAtTime(0.4, now);
+    gain2.gain.exponentialRampToValueAtTime(0.01, now + duration);
+    
+    // Layer 3: Attack thump with noise
+    const bufferSize = audioContext.sampleRate * 0.05;
+    const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+    const data = buffer.getChannelData(0);
+    
+    for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.1));
+    }
+    
+    const noise = audioContext.createBufferSource();
+    const noiseGain = audioContext.createGain();
+    const noiseFilter = audioContext.createBiquadFilter();
+    
+    noise.buffer = buffer;
+    noise.connect(noiseFilter);
+    noiseFilter.connect(noiseGain);
+    noiseGain.connect(audioContext.destination);
+    
+    noiseFilter.type = 'lowpass';
+    noiseFilter.frequency.setValueAtTime(200, now);
+    
+    noiseGain.gain.setValueAtTime(0.6, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+    
+    osc1.start(now);
+    osc1.stop(now + duration);
+    osc2.start(now);
+    osc2.stop(now + duration);
+    noise.start(now);
 }
 
 function createTonSound() {
     if (!audioContext) initAudio();
     
-    const duration = 0.15;
+    const duration = 0.2;
     const now = audioContext.currentTime;
     
-    const oscillator = audioContext.createOscillator();
-    const gainNode = audioContext.createGain();
-    const filter = audioContext.createBiquadFilter();
+    // Layer 1: High frequency snap
+    const osc1 = audioContext.createOscillator();
+    const gain1 = audioContext.createGain();
+    const filter1 = audioContext.createBiquadFilter();
     
-    oscillator.connect(filter);
-    filter.connect(gainNode);
-    gainNode.connect(audioContext.destination);
+    osc1.connect(filter1);
+    filter1.connect(gain1);
+    gain1.connect(audioContext.destination);
     
-    oscillator.type = 'triangle';
-    oscillator.frequency.setValueAtTime(800, now);
-    oscillator.frequency.exponentialRampToValueAtTime(400, now + duration);
+    osc1.type = 'square';
+    osc1.frequency.setValueAtTime(1200, now);
+    osc1.frequency.exponentialRampToValueAtTime(400, now + duration);
     
-    filter.type = 'highpass';
-    filter.frequency.setValueAtTime(600, now);
+    filter1.type = 'bandpass';
+    filter1.frequency.setValueAtTime(2000, now);
+    filter1.Q.setValueAtTime(5, now);
     
-    gainNode.gain.setValueAtTime(0.5, now);
-    gainNode.gain.exponentialRampToValueAtTime(0.01, now + duration);
+    gain1.gain.setValueAtTime(0.5, now);
+    gain1.gain.exponentialRampToValueAtTime(0.01, now + duration);
     
-    oscillator.start(now);
-    oscillator.stop(now + duration);
+    // Layer 2: Snare-like brightness
+    const osc2 = audioContext.createOscillator();
+    const gain2 = audioContext.createGain();
+    const filter2 = audioContext.createBiquadFilter();
+    
+    osc2.connect(filter2);
+    filter2.connect(gain2);
+    gain2.connect(audioContext.destination);
+    
+    osc2.type = 'sawtooth';
+    osc2.frequency.setValueAtTime(800, now);
+    osc2.frequency.exponentialRampToValueAtTime(300, now + duration);
+    
+    filter2.type = 'highpass';
+    filter2.frequency.setValueAtTime(800, now);
+    
+    gain2.gain.setValueAtTime(0.3, now);
+    gain2.gain.exponentialRampToValueAtTime(0.01, now + duration);
+    
+    // Layer 3: Crisp noise for attack
+    const bufferSize = audioContext.sampleRate * 0.08;
+    const buffer = audioContext.createBuffer(1, bufferSize, audioContext.sampleRate);
+    const data = buffer.getChannelData(0);
+    
+    for (let i = 0; i < bufferSize; i++) {
+        data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (bufferSize * 0.05));
+    }
+    
+    const noise = audioContext.createBufferSource();
+    const noiseGain = audioContext.createGain();
+    const noiseFilter = audioContext.createBiquadFilter();
+    
+    noise.buffer = buffer;
+    noise.connect(noiseFilter);
+    noiseFilter.connect(noiseGain);
+    noiseGain.connect(audioContext.destination);
+    
+    noiseFilter.type = 'highpass';
+    noiseFilter.frequency.setValueAtTime(1500, now);
+    
+    noiseGain.gain.setValueAtTime(0.7, now);
+    noiseGain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+    
+    osc1.start(now);
+    osc1.stop(now + duration);
+    osc2.start(now);
+    osc2.stop(now + duration);
+    noise.start(now);
 }
 
 // Favorites Management
@@ -414,18 +504,38 @@ function closeModal() {
     modal.classList.remove('open');
     document.body.style.overflow = '';
     currentPlayingSong = null;
+    
+    // Stop playback when modal closes
+    if (currentPlayInterval) {
+        clearInterval(currentPlayInterval);
+        currentPlayInterval = null;
+        isPlaying = false;
+        playModalBtn.textContent = '▶';
+    }
 }
 
 modalClose.addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', closeModal);
 
-// Play song notation as sound
+// Play song notation as sound in modal
 const playModalBtn = document.getElementById('playModalBtn');
 let isPlaying = false;
 
 playModalBtn.addEventListener('click', () => {
-    if (isPlaying || !currentPlayingSong) return;
+    if (!currentPlayingSong) return;
     
+    // If playing, pause it
+    if (isPlaying) {
+        if (currentPlayInterval) {
+            clearInterval(currentPlayInterval);
+            currentPlayInterval = null;
+        }
+        isPlaying = false;
+        playModalBtn.textContent = '▶';
+        return;
+    }
+    
+    // Start playing
     const song = songDatabase[currentPlayingSong];
     if (!song) return;
     
@@ -438,9 +548,10 @@ playModalBtn.addEventListener('click', () => {
     const beatDuration = 60000 / tempo; // milliseconds per beat
     
     let currentBeat = 0;
-    const playInterval = setInterval(() => {
+    currentPlayInterval = setInterval(() => {
         if (currentBeat >= notation.length) {
-            clearInterval(playInterval);
+            clearInterval(currentPlayInterval);
+            currentPlayInterval = null;
             isPlaying = false;
             playModalBtn.textContent = '▶';
             return;
@@ -457,40 +568,10 @@ playModalBtn.addEventListener('click', () => {
 // Song Item Clicks and Actions
 document.addEventListener('click', (e) => {
     // Song item click (open modal)
-    const songItem = e.target.closest('.song-item:not(.play-btn):not(.favorite-btn)');
-    if (songItem && !e.target.closest('.song-actions')) {
+    const songItem = e.target.closest('.song-item');
+    if (songItem && !e.target.closest('.favorite-btn')) {
         const songId = songItem.getAttribute('data-song');
         openModal(songId);
-        return;
-    }
-    
-    // Play button click
-    if (e.target.closest('.play-btn')) {
-        e.stopPropagation();
-        const songItem = e.target.closest('.song-item');
-        const songId = songItem.getAttribute('data-song');
-        const song = songDatabase[songId];
-        
-        if (!song) return;
-        
-        initAudio();
-        const notation = song.notation.replace(/\s*\|\s*/g, ' ').split(' ').filter(n => n);
-        const tempo = parseInt(song.tempo);
-        const beatDuration = 60000 / tempo;
-        
-        let currentBeat = 0;
-        const playInterval = setInterval(() => {
-            if (currentBeat >= notation.length) {
-                clearInterval(playInterval);
-                return;
-            }
-            
-            const beat = notation[currentBeat];
-            if (beat === 'B') createBasSound();
-            else if (beat === 'T') createTonSound();
-            
-            currentBeat++;
-        }, beatDuration);
         return;
     }
     
@@ -503,16 +584,33 @@ document.addEventListener('click', (e) => {
         return;
     }
     
-    // Sound test buttons in techniques
-    if (e.target.closest('.sound-test-btn')) {
-        const card = e.target.closest('.technique-card');
-        const sound = card.getAttribute('data-sound');
+    // Technique cards - entire card is clickable
+    const techniqueCard = e.target.closest('.technique-card[data-sound]');
+    if (techniqueCard) {
+        const sound = techniqueCard.getAttribute('data-sound');
+        
+        // Add animation
+        techniqueCard.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            techniqueCard.style.transform = '';
+        }, 150);
         
         initAudio();
         if (sound === 'bas') {
             createBasSound();
         } else if (sound === 'ton') {
             createTonSound();
+        }
+        return;
+    }
+    
+    // Tutorial cards - toggle details
+    const tutorialCard = e.target.closest('.tutorial-card[data-tutorial]');
+    if (tutorialCard) {
+        const details = tutorialCard.querySelector('.tutorial-details');
+        if (details) {
+            details.classList.toggle('hidden');
+            tutorialCard.classList.toggle('expanded');
         }
         return;
     }
@@ -526,20 +624,17 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Tutorial & Exercise Cards
-const tutorialCards = document.querySelectorAll('.tutorial-card');
-tutorialCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const title = card.querySelector('h3').textContent;
-        alert(`${title}\n\n${card.querySelector('p').textContent}`);
-    });
-});
-
+// Exercise Cards - click to play
 const exerciseCards = document.querySelectorAll('.exercise-card');
 exerciseCards.forEach(card => {
     card.addEventListener('click', () => {
         const pattern = card.querySelector('.exercise-pattern').textContent;
-        const title = card.querySelector('h3').textContent;
+        
+        // Add animation
+        card.style.transform = 'scale(0.98)';
+        setTimeout(() => {
+            card.style.transform = '';
+        }, 150);
         
         initAudio();
         const notation = pattern.split(' ').filter(n => n);
